@@ -46,8 +46,8 @@ To get this project running on your local machine, follow these steps.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/agritech.git
-cd agritech
+git clone git@github.com:aditya-dewangan1902/AgriTech.git
+cd AgriTech
 ```
 
 ### 2. Install Dependencies
