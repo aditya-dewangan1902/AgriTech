@@ -1,11 +1,27 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
-const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: path.join(__dirname, '..', 'database.sqlite'),
-  logging: false
-});
+let sequelize;
+if (process.env.DATABASE_URL) {
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    protocol: 'postgres',
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false // Required for platforms like Render/Heroku
+      }
+    },
+    logging: false
+  });
+} else {
+  sequelize = new Sequelize({
+    dialect: 'sqlite',
+    storage: path.join(__dirname, '..', 'database.sqlite'),
+    logging: false
+  });
+}
 
 const User = require('./User')(sequelize, DataTypes);
 const Submission = require('./Submission')(sequelize, DataTypes);
