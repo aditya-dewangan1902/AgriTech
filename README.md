@@ -2,6 +2,8 @@
 
 ![AgriTech Banner](https://img.shields.io/badge/AgriTech-Publishing_System-006633?style=for-the-badge)
 
+**🌟 Live Demo:** [https://agri-tech-tau.vercel.app/](https://agri-tech-tau.vercel.app/)
+
 AgriTech is a full-stack, comprehensive submission and review portal designed for academic and scientific publishing in the agricultural technology sector. It bridges the gap between authors and editorial administrators by providing tailored dashboards for submitting manuscripts, managing peer reviews, and streamlining the publication process.
 
 ## 🚀 Key Features
